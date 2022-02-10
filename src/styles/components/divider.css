@@ -1,0 +1,25 @@
+.divider {
+    align-items: center;
+    color: #a8a8b3;
+    content: attr(title);
+    display: flex;
+    font-size: 14px;
+    margin: 8px auto;
+    width: 70%;
+}
+
+.divider::before {
+    background: #a8a8b3;
+    content: '';
+    flex: 1;
+    height: 1px;
+    margin-right: 16px;
+}
+
+.divider::after {
+    background: #a8a8b3;
+    content: '';
+    flex: 1;
+    height: 1px;
+    margin-left: 16px;
+}

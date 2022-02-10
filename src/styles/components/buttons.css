@@ -1,0 +1,42 @@
+.c-button {
+    border-radius: 5px;
+    cursor: pointer;
+    height: 40px;
+    width: 100%;
+}
+
+.c-button.--pri {
+    background-color: #0F4C70;
+    border: none;
+    color: #fff;
+}
+
+.c-button.--sec {
+    background-color: #fff;
+    border: 1px solid #0F4C70;
+}
+
+.c-button.--ter {
+    background-color: transparent;
+    border: none;
+    text-decoration: underline;
+    color: #0F4C70;
+}
+
+.c-button.--pw-recovery {
+    text-align: left;
+}
+
+.c-buttons__wrapper.--pw-recovery {
+    width: 120px;
+}
+
+.c-button__content.--pw-recovery {
+    font-size: 12px;
+}
+
+.c-button.--enterWithGoogle {
+    background-color: #fff;
+    border: 1px solid #f00;
+    color: #f00;
+}

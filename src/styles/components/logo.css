@@ -1,0 +1,9 @@
+.c-logo.--ac-login {
+    position: absolute;
+    inset: 0 0 450px 0;
+    margin: auto;
+}
+
+.c-logo.--google-login {
+    margin-right: 16px; 
+}
