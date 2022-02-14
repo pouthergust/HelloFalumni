@@ -10,11 +10,32 @@
     position: relative;
 }
 
-.--login .c-fieldset__legend {
+.c-forms__wrapper {
+    padding: 16px 24px;
+}
+
+.--login .c-fieldset__legend.--login {
     font-weight: bold;
-    font-size: 24px;
     margin-bottom: 16px;
 }
 
-.c-fieldset { border: none; }
-.c-fieldset__legend { color: #0F4C70; }
+.c-fieldset.--login { border: none; }
+
+.c-fieldset.--std {
+    padding: 24px;
+    border-color: #0F4C70;
+    border-radius: 8px;
+}
+
+.c-fieldset__legend { 
+    background: white;
+    color: #0F4C70;
+    font-size: 24px;
+    padding: 0 8px;
+    text-align: center;
+ }
+
+.c-label {
+    width: 100%;
+    text-transform: capitalize;
+}

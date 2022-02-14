@@ -1,11 +1,10 @@
 {
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
+  "database": {
+    "rules": "database.rules.json"
   },
   "hosting": {
-    "site": "falumni",
-    "public": "public",
+    "site": "myfalumni",
+    "public": "build",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -17,8 +16,5 @@
         "destination": "/index.html"
       }
     ]
-  },
-  "storage": {
-    "rules": "storage.rules"
   }
 }

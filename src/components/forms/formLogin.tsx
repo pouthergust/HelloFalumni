@@ -1,21 +1,24 @@
 import React, { FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import '../../styles/index.css';
 
 function FormLogin()  {
+  const navigate = useNavigate()
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
+    navigate('/home')
 
-    console.log(email, password)
+    // return <Navigate to='/home' />
   }
 
   return (
     <form className="c-forms --login" onSubmit={handleSubmit}>
-      <fieldset className="c-fieldset">
-        <legend className="c-fieldset__legend">Seja bem-vindo!</legend>
+      <fieldset className="c-fieldset --login">
+        <legend className="c-fieldset__legend --login">Seja bem-vindo!</legend>
         <input 
           className="c-input" 
           type="email" 

@@ -23,6 +23,10 @@
     color: #0F4C70;
 }
 
+.c-button.--submit {
+    margin-top: 24px;
+}
+
 .c-button.--pw-recovery {
     text-align: left;
 }
@@ -39,4 +43,13 @@
     background-color: #fff;
     border: 1px solid #f00;
     color: #f00;
+}
+
+.c-button.--back {
+    text-decoration: none;
+    width: initial;
+}
+
+.c-button__content.--back {
+    margin-left: 12px;
 }
