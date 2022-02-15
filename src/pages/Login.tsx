@@ -1,16 +1,12 @@
 import React from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { signInWithPopup, GoogleAuthProvider, getAuth } from 'firebase/auth'
 
-
 import FormLogin from '../components/forms/formLogin'
-
-import firebase from '../services/firebase'
 
 import googleIcon from '../assets/googleIcon.svg';
 import logo from '../assets/logo.svg';
-import '../styles/index.css';
 
 function Login()  {
   const navigate = useNavigate()

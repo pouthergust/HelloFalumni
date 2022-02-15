@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Back from '../components/Buttons/Back'
+import Back from '../components/buttons/Back'
 
 function Forms() {
 

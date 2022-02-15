@@ -1,12 +1,17 @@
 import React from 'react';
-import Nav from '../components/Nav/Nav';
+import Students from '../components/Students';
+import Nav from '../components/Nav';
+import Rooms from '../components/Rooms';
+import NewButton from '../components/buttons/NewButton';
 
 function Home() {
 
   return (
-    <div>
+    <div className="l-home">
       <Nav />
-      <h1>Home works!</h1>
+      <Rooms />
+      <Students />
+      <NewButton />
     </div>
   );
 }

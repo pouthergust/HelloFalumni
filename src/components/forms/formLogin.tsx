@@ -41,7 +41,6 @@ function FormLogin()  {
           </button>
         </div>
 
-
         <button className="c-button --pri" type="submit">Entrar</button>
       </fieldset>
     </form>

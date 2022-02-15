@@ -9,6 +9,10 @@
 @import url('components/inputs.css');
 @import url('components/logo.css');
 @import url('components/nav.css');
+@import url('components/rooms.css');
+@import url('components/students.css');
+@import url('components/title.css');
 
 /* layouts */
 @import url('layouts/login.css');
+@import url('layouts/home.css');

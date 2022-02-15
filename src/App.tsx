@@ -3,8 +3,10 @@ import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 // import { FormSignUp } from './components/forms';
 
 import { Login } from './pages'
+import CoursesListing from './pages/CoursesListing';
 import Forms from './pages/Forms';
-import './styles/index.css';
+import RoomsListing from './pages/RoomsListing';
+import StudentsListing from './pages/StudentsListing';
 
 const Home = React.lazy(() => import("./pages/Home") )
 const FormSignUp = React.lazy(() => import('./components/forms/formSignUp') )
@@ -14,19 +16,21 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Navigate to="login" />}/>
+        <Route path="/" element={<Navigate to="/login" />}/>
         <Route path="/login" element={<Login />}/>
-        <Route path="home" 
+        <Route path="/home" 
           element={
-            <React.Suspense fallback={<>Carregando...</>}>
+            <React.Suspense fallback={<p>Carregando...</p>}>
               <Home />
             </React.Suspense>
           } />
-
-        <Route path="cadastro" element={<Forms />}> 
+        <Route path="/alunos" element={<StudentsListing />}/>
+        <Route path="/turmas" element={<RoomsListing />}/>
+        <Route path="/cursos" element={<CoursesListing />}/>
+        <Route path="/cadastro" element={<Forms />}> 
           <Route path="usuario" 
           element={
-            <React.Suspense fallback={<>Carregando...</>}>
+            <React.Suspense fallback={<p>Carregando...</p>}>
               <FormSignUp />
             </React.Suspense>
           } />

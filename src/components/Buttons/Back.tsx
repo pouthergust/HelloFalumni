@@ -12,8 +12,8 @@ function Back({ pages }:Page) {
 
   return (
     <button className="c-button --ter --back" onClick={() => navigate(pages)}>
-        <img src={backArrow} alt="voltar" />
-        <span className="c-button__content --back"> voltar </span>
+      <img src={backArrow} alt="voltar" />
+      <span className="c-button__content --back"> voltar </span>
     </button>
   );
 }

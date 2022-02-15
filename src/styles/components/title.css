@@ -1,0 +1,7 @@
+.c-title {
+    align-items: center;
+    border-bottom: 2px solid #0F4C70;
+    color: #0F4C70;
+    display: flex;
+    height: 40px;
+}

@@ -1,0 +1,11 @@
+.c-students__items {
+    align-items: center;
+    display: flex;
+    color: #BDBDBD;
+    height: 40px;
+    justify-content: space-between;
+}
+
+.c-students__items:not(:last-child) {
+    border-bottom: 1px solid #BDBDBD;
+}

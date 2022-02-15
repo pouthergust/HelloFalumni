@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import userIcon from '../../assets/account_circle.svg'
@@ -6,8 +6,17 @@ import menuIcon from '../../assets/sandwich.svg'
 import closeIcon from '../../assets/close.svg'
 import ellipse from '../../assets/Ellipse.svg'
 
+type NavMenuItem = {
+  title: string
+  navigateTo: string
+}
+
 function Nav() {
-    const options: string[] = ['alunos', 'cursos', 'turmas']
+    const options: NavMenuItem[] = [
+      { title: 'alunos', navigateTo: '/alunos'},
+      { title: 'cursos', navigateTo: '/cursos'},
+      { title: 'turmas', navigateTo: '/turmas'},
+    ]
     const [ isMenuExpanded, setIsMenuExpanded] = useState(false);
 
     const linkStyle = {
@@ -25,10 +34,10 @@ function Nav() {
         <ul className="c-navigation__list">
           {options.map((element, index) => {
             return (
-              <>
-                <li key={index}><Link style={linkStyle} to={element} >{element}</Link></li>
+              <Fragment key={index}>
+                <li><Link style={linkStyle} to={element.navigateTo} >{element.title}</Link></li>
                 <img src={ellipse} alt="bullet" />
-              </>
+              </Fragment>
             )
           })}
           <li><Link style={linkStyle} to="/login">sair</Link></li>

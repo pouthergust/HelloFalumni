@@ -5,6 +5,8 @@
   font-size: 18px;
 }
 
+/* html { height: 100vh; } */
+
 body {
     margin: 0;
     font-family: 'Roboto','Ubuntu','Helvetica Neue', 'Raleway', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -14,4 +16,8 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.container {
+  padding: 16px 24px;
 }
