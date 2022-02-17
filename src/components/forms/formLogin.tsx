@@ -1,16 +1,25 @@
 import React, { FormEvent, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-import '../../styles/index.css';
+import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "firebase/auth";
 
 function FormLogin()  {
   const navigate = useNavigate()
+  const auth = getAuth()
   const [ email, setEmail ] = useState('')
   const [ password, setPassword ] = useState('')
 
   const handleSubmit = (event: FormEvent) => {
     event.preventDefault();
-    navigate('/home')
+
+    setPersistence(auth, browserLocalPersistence)
+      .then(() => {
+        return signInWithEmailAndPassword(auth, email, password)
+          .then(() => {
+            const user = getAuth().currentUser
+            if (user) navigate('/home')
+          }).catch((error) => { throw Error(error) })
+      })
+      .catch((error) => { throw Error(error) })
 
     // return <Navigate to='/home' />
   }

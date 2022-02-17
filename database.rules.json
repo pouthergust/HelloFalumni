@@ -1,6 +1,16 @@
 {
-  "rules": {
-    ".read": false,
-    ".write": false
+  "rules": {    
+		"classes": {
+      ".read": "auth != null",
+      ".write": "auth != null && (!data.exists() || data.child('adminId').val() == auth.id)",
+      "rooms": {
+      	".read": "auth != null",
+      	".write": "auth != null && (!data.exists() || data.child('adminId').val() == auth.id)",
+        "students": {
+        ".read": "auth != null",
+        ".write": "auth != null && (!data.exists() || data.child('adminId').val() == auth.id)"
+        }
+    	}
+    }
   }
 }

@@ -5,6 +5,7 @@ import userIcon from '../../assets/account_circle.svg'
 import menuIcon from '../../assets/sandwich.svg'
 import closeIcon from '../../assets/close.svg'
 import ellipse from '../../assets/Ellipse.svg'
+import { getAuth } from 'firebase/auth';
 
 type NavMenuItem = {
   title: string
@@ -40,7 +41,7 @@ function Nav() {
               </Fragment>
             )
           })}
-          <li><Link style={linkStyle} to="/login">sair</Link></li>
+          <li><Link style={linkStyle} to="/login" onClick={() => getAuth().signOut()}>sair</Link></li>
         </ul>
       </nav>
       <div className="divider --nav"></div>

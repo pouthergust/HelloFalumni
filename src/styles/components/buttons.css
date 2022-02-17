@@ -72,5 +72,52 @@
 
 .c-button.--newButton {
     margin-left: auto;
+    transition: all 0.3s linear;
     width: initial;
+    z-index: 1;
+}
+
+.c-button__img.--newButton {
+    transition: transform 0.2s ease-in-out;
+}
+.c-button__img.--newButton.--isShowing {
+    transform: rotate(45deg);
+}
+
+.c-button__wrapper.--createButton {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: absolute;
+    inset: auto auto 24px 24px;
+    width: 150px;
+    transform: translateX(-190px);
+    opacity: 0;
+}
+.c-button__wrapper.--createButton.--isShowing {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.c-button.--createButton {
+    text-align: left;
+    border: none;
+    padding: 0 12px;
+    text-transform: capitalize;
+}
+
+.c-button__img.--createButton {
+    margin-right: 12px;
+}
+
+.backdrop {
+    background-color: rgba(0, 0, 0, .35);
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    inset: 0 0 0 0;
+    display: none;
+}
+.backdrop.--isShowing {
+    display: inline-block;
 }
