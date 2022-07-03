@@ -3,11 +3,11 @@ import { useNavigate } from 'react-router-dom';
 
 import plusIcon from '../../assets/plus.svg'
 
-type Props = {
+type CreateButtonProps = {
   isShowing: boolean
 }
 
-function CreateButton({ isShowing }: Props) {
+function CreateButton({ isShowing }: CreateButtonProps) {
   const navigate = useNavigate();
   const buttons = ['aluno', 'turma', 'curso', 'período']
 

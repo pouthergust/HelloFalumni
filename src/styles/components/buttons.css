@@ -32,6 +32,13 @@
     text-align: left;
 }
 
+.c-button.--optBtn {
+    aspect-ratio: 1;
+    display: grid;
+    place-items: center;
+    width: fit-content;
+}
+
 .c-buttons__wrapper.--pw-recovery {
     width: 120px;
 }

@@ -13,7 +13,7 @@ const arrow = {
   height: '14px'
 }
 
-function GoToList({ title, navigateTo }:Props) {
+function GoToList({ title, navigateTo }: Props) {
   const navigate = useNavigate();
 
   return (

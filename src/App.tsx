@@ -3,14 +3,15 @@ import * as React from 'react';
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
 // import { FormSignUp } from './components/forms';
 
-import { Login } from './pages'
 import CoursesListing from './pages/CoursesListing';
 import Forms from './pages/Forms';
 import RoomsListing from './pages/RoomsListing';
 import StudentsListing from './pages/StudentsListing';
 
-const Home = React.lazy(() => import("./pages/Home") )
+import { Login } from './pages';
+import Listing from './pages/Listing';
 
+const Home = React.lazy(() => import("./pages/Home") )
 const FormSignUp = React.lazy(() => import('./components/forms/formSignUp') )
 const FormStudent = React.lazy(() => import('./components/forms/formStudent') )
 const FormRoom = React.lazy(() => import('./components/forms/formRoom') )
@@ -20,7 +21,7 @@ const FormPeriod = React.lazy(() => import('./components/forms/formPeriod') )
 
 function PrivateRoutes(props: any) {
   const { children } = props
-  let user = getAuth().currentUser
+  let user = sessionStorage.user || getAuth().currentUser
   return user ? children : <Navigate to="/login" />
 }
 
@@ -38,21 +39,23 @@ function App() {
               </React.Suspense>
             </PrivateRoutes>
         } />
-        <Route path="/alunos" element={
-          <PrivateRoutes>
-            <StudentsListing />
-          </PrivateRoutes>
-        }/>
-        <Route path="/turmas" element={
-          <PrivateRoutes>
-            <RoomsListing />
-          </PrivateRoutes>
-        }/>
-        <Route path="/cursos" element={
-          <PrivateRoutes>
-            <CoursesListing />
-          </PrivateRoutes>
-        }/>
+        <Route path="/lista" element={<Listing />}>
+          <Route path="alunos" element={
+            <PrivateRoutes>
+              <StudentsListing />
+            </PrivateRoutes>
+          }/>
+          <Route path="turmas" element={
+            <PrivateRoutes>
+              <RoomsListing />
+            </PrivateRoutes>
+          }/>
+          <Route path="cursos" element={
+            <PrivateRoutes>
+              <CoursesListing />
+            </PrivateRoutes>
+          }/>
+        </Route>
         <Route path="/cadastro" element={<Forms />}> 
           <Route path="usuario" element={
             <React.Suspense fallback={<p>Carregando...</p>}>

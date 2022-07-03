@@ -1,12 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { signInWithPopup, GoogleAuthProvider, getAuth } from 'firebase/auth'
 
-import FormLogin from '../components/forms/formLogin'
 
 import googleIcon from '../assets/googleIcon.svg';
 import logo from '../assets/logo.svg';
+import { FormLogin } from '../components/forms';
 
 function Login()  {
   const navigate = useNavigate()
@@ -18,11 +18,17 @@ function Login()  {
     signInWithPopup(auth, provider)
     .then(() => {
       const user = getAuth().currentUser
-      if (user) navigate('/home')
+      if (user) {
+        sessionStorage.setItem('user', JSON.stringify(user))
+        navigate('/home')
+      }
     })
     .catch((error) => { throw Error(error) })
-
   }
+
+  useEffect(() => {
+    if (sessionStorage.user) navigate('/home')
+  }, [navigate])
 
   return (
     <div className="background">

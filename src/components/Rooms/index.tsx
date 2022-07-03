@@ -1,5 +1,8 @@
 import React from 'react';
-import GoToList from '../buttons/GoToList';
+import GoToList from '../Buttons/GoToList';
+import ListOptionButton from '../Buttons/ListOptionButton';
+import Search from '../Search';
+import ListingLabel from './ListingLabel';
 
 function Rooms() {
   const rooms = [
@@ -13,7 +16,7 @@ function Rooms() {
 
   return (
     <section className="c-rooms container">
-      <GoToList title="Turmas" navigateTo="/turmas"/>
+      <GoToList title="Turmas" navigateTo="/lista/turmas"/>
       <div className="c-rooms__grid">
         {rooms.map((element, index) => {
           return (
@@ -25,6 +28,8 @@ function Rooms() {
       </div>
     </section>
   );
+
+
 }
 
 export default Rooms;

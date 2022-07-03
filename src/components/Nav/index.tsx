@@ -12,22 +12,28 @@ type NavMenuItem = {
   navigateTo: string
 }
 
-function Nav() {
-    const options: NavMenuItem[] = [
-      { title: 'alunos', navigateTo: '/alunos'},
-      { title: 'cursos', navigateTo: '/cursos'},
-      { title: 'turmas', navigateTo: '/turmas'},
-    ]
-    const [ isMenuExpanded, setIsMenuExpanded] = useState(false);
+function Nav() { 
+  const options: NavMenuItem[] = [
+    { title: 'alunos', navigateTo: '/alunos'},
+    { title: 'cursos', navigateTo: '/cursos'},
+    { title: 'turmas', navigateTo: '/turmas'},
+  ]
 
-    const linkStyle = {
-      textDecoration: 'none',
-      color: '#fff'
-    }
+  const [ isMenuExpanded, setIsMenuExpanded] = useState(false);
 
-    const hiddenNav = {
-      transform: 'translateY(-55px)'
-    }
+  const linkStyle = {
+    textDecoration: 'none',
+    color: '#fff'
+  }
+
+  const hiddenNav = {
+    transform: 'translateY(-55px)'
+  }
+
+  const logoff = () => {
+    sessionStorage.removeItem('user')
+    getAuth().signOut()
+  }
 
   return (
     <div className="c-navigation__background --expanded" style={isMenuExpanded ? {} : hiddenNav}>
@@ -36,12 +42,12 @@ function Nav() {
           {options.map((element, index) => {
             return (
               <Fragment key={index}>
-                <li><Link style={linkStyle} to={element.navigateTo} >{element.title}</Link></li>
+                <li><Link style={linkStyle} to={element.navigateTo}>{element.title}</Link></li>
                 <img src={ellipse} alt="bullet" />
               </Fragment>
             )
           })}
-          <li><Link style={linkStyle} to="/login" onClick={() => getAuth().signOut()}>sair</Link></li>
+          <li><Link style={linkStyle} to="/login" onClick={logoff}>sair</Link></li>
         </ul>
       </nav>
       <div className="divider --nav"></div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Students from '../components/Students';
 import Nav from '../components/Nav';
 import Rooms from '../components/Rooms';
-import NewButton from '../components/buttons/NewButton';
+import NewButton from '../components/Buttons/NewButton';
 
 function Home() {
 

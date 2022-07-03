@@ -1,6 +1,11 @@
-import React, { FormEvent, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getAuth, signInWithEmailAndPassword, setPersistence, browserLocalPersistence } from "firebase/auth";
+import { 
+  browserLocalPersistence, 
+  getAuth, 
+  setPersistence, 
+  signInWithEmailAndPassword 
+} from "firebase/auth"
+import { FormEvent, useState } from "react"
+import { useNavigate } from "react-router-dom"
 
 function FormLogin()  {
   const navigate = useNavigate()

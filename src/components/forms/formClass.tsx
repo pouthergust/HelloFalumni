@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { ChangeEvent, FormEvent, useState } from 'react';
 import { Class, classInitialState } from '../../models/forms/Class';
 import { FormField } from '../../models/forms/FormField';
 import FormBasicBoilerplate from './formBasicBoilerplate';
@@ -26,8 +26,9 @@ function FormsClass() {
     change: (e: ChangeEvent<HTMLInputElement>) => setCourse({...course, description: e.target.value})},
   ]
 
-  const handleSubmit = () => {
-    alert('Aooba')
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault()
+    console.log(course)
   }
 
   return (

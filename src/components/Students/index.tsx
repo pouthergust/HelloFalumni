@@ -1,5 +1,5 @@
 import React from 'react';
-import GoToList from '../buttons/GoToList';
+import GoToList from '../Buttons/GoToList';
 import Title from '../Title';
 
 function Students() {

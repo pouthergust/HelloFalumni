@@ -1,9 +1,10 @@
 import React from 'react';
+import Rooms from '../components/Rooms';
 
 function RoomsListing() {
 
   return (
-    <h1>RoomsListing Works</h1>
+    <Rooms />
   );
 }
 
