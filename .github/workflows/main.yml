@@ -1,1 +1,31 @@
-firebase deploy --only hosting:falumni
+name: Deploy Firebase Hosting
+
+on:
+  push:
+    branches:
+      - main  # só vai rodar quando fizer push na branch main (pode mudar)
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Instalar yarn
+        run: npm install -g yarn
+
+      - name: Instalar dependências
+        run: yarn install
+
+      - name: Instalar Firebase CLI
+        run: yarn global add firebase-tools
+
+      - name: Deploy para Firebase Hosting
+        run: firebase deploy --only hosting:falumni --token ${{ secrets.FIREBASE_TOKEN }}
